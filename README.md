@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kanca Vinç & Manitou — Web Sitesi
 
-## Getting Started
+Next.js 16 (App Router) + Tailwind CSS 4. Türkçe, mobil öncelikli, SEO ve Google Ads odaklı vitrin sitesi.
 
-First, run the development server:
+## Çalıştırma
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # geliştirme  → http://localhost:3000
+npm run build    # üretim derlemesi
+npm run start    # üretim sunucusu
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Her şey tek yerden değişir
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Telefon, WhatsApp, adres, harita konumu, alan adı, hizmet bölgeleri → **`lib/site.ts`**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Ne değişecek | Nerede |
+| --- | --- |
+| Telefon / WhatsApp numarası | `lib/site.ts` → `phone` |
+| Adres ve harita konumu (şu an Yerebatan Sarnıcı — test) | `lib/site.ts` → `address`, `geo` |
+| Şehir (başlıklar ve SEO metinleri buradan beslenir) | `lib/site.ts` → `city` |
+| Alan adı | `lib/site.ts` → `url` veya `NEXT_PUBLIC_SITE_URL` ortam değişkeni |
+| Hizmet sayfaları ve SEO metinleri | `lib/services.ts` |
+| Ana sayfa SSS | `lib/services.ts` → `homeFaqs` |
+| Fotoğraf / video listesi | `lib/site.ts` → `photos`, `videos` (dosyalar `public/media/`) |
 
-## Learn More
+## Google Ads / Analytics (isteğe bağlı)
 
-To learn more about Next.js, take a look at the following resources:
+Ortam değişkenleri tanımlanmazsa hiçbir takip kodu yüklenmez. Tanımlanırsa WhatsApp, telefon ve form tıklamaları otomatik dönüşüm olarak gönderilir.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_GADS_ID=AW-XXXXXXXXX
+NEXT_PUBLIC_GADS_WA_LABEL=...     # WhatsApp tıklaması dönüşüm etiketi
+NEXT_PUBLIC_GADS_CALL_LABEL=...   # Telefon tıklaması dönüşüm etiketi
+NEXT_PUBLIC_GADS_FORM_LABEL=...   # Form gönderimi dönüşüm etiketi
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Search Console doğrulama kodu: `app/layout.tsx` içindeki `verification` satırı.
 
-## Deploy on Vercel
+## Yeni medya eklemek
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Ham dosyalar `app/assests/` içinde. Web için sıkıştırılmış kopyalar `public/media/` içinde kullanılır
+(fotoğraflar max 1600px JPEG, videolar sessiz H.264 + `faststart`). Yeni video eklerken 24 saniyeyi geçmemesi
+ve ~1.5 MB civarı olması hız için idealdir.
