@@ -12,7 +12,7 @@ export const site = {
   tagline: "Operatörlü Manitou & Vinç Kiralama",
 
   /** Canlı alan adı. Vercel vb. ortamda NEXT_PUBLIC_SITE_URL ile ezilebilir. */
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://kancavincmonito.com").replace(/\/$/, ""),
+  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.kancavincmanitou.com").replace(/\/$/, ""),
 
   /** Hizmet verilen ana şehir (başlıklarda ve SEO metinlerinde kullanılır). */
   city: "İstanbul",
