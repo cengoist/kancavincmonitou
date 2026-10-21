@@ -18,7 +18,7 @@ Telefon, WhatsApp, adres, harita konumu, alan adı, hizmet bölgeleri → **`lib
 | Ne değişecek | Nerede |
 | --- | --- |
 | Telefon / WhatsApp numarası | `lib/site.ts` → `phone` |
-| Adres ve harita konumu (şu an Yerebatan Sarnıcı — test) | `lib/site.ts` → `address`, `geo` |
+| Adres ve harita konumu (Güngören, Abdi İpekçi Cd. pini) | `lib/site.ts` → `address`, `geo` |
 | Şehir (başlıklar ve SEO metinleri buradan beslenir) | `lib/site.ts` → `city` |
 | Alan adı | `lib/site.ts` → `url` veya `NEXT_PUBLIC_SITE_URL` ortam değişkeni |
 | Hizmet sayfaları ve SEO metinleri | `lib/services.ts` |

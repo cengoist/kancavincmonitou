@@ -23,26 +23,26 @@ export const site = {
 
   /** Birincil hat: WhatsApp ve tüm "Ara" butonları bunu kullanır. */
   phone: {
-    display: "0538 786 65 13",
-    tel: "+905387866513",
+    display: "0552 669 39 65",
+    tel: "+905526693965",
     /** wa.me için ülke kodlu, + ve boşluksuz */
-    whatsapp: "905387866513",
+    whatsapp: "905526693965",
   },
   /** İkinci hat: iletişim bölümü ve footer'da ayrıca gösterilir. */
   phone2: {
-    display: "0552 669 39 65",
-    tel: "+905526693965",
+    display: "0538 786 65 13",
+    tel: "+905387866513",
   },
 
-  /** TEST KONUMU: Yerebatan Sarnıcı. Gerçek adres hazır olunca güncelleyin. */
+  /** Gerçek konum (Google Maps pini: 41°00'56.7"N 28°52'28.3"E). Kapı numarası eklemek isterseniz street/full alanlarını güncelleyin. */
   address: {
-    street: "Alemdar Mah. Yerebatan Cd. No:1/3",
-    district: "Fatih",
+    street: "Akıncılar Mah. Abdi İpekçi Cd.",
+    district: "Güngören",
     city: "İstanbul",
-    postalCode: "34110",
-    full: "Alemdar Mah. Yerebatan Cd. No:1/3, Fatih / İstanbul",
+    postalCode: "34160",
+    full: "Akıncılar Mah. Abdi İpekçi Cd., Güngören / İstanbul",
   },
-  geo: { lat: 41.0084, lng: 28.9779 },
+  geo: { lat: 41.0157433, lng: 28.8745308 },
 
   hours: "Her gün 07:00 – 22:00",
   /** schema.org openingHoursSpecification için */
