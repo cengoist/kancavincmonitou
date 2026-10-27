@@ -205,6 +205,26 @@ export default async function ServicePage({ params }: PageProps<"/hizmetler/[slu
                 ))}
               </ul>
             </Reveal>
+
+            {s.gallery && s.gallery.length > 0 && (
+              <Reveal className="mt-14">
+                <h3 className="font-display text-3xl font-extrabold uppercase text-white">Sahadan kareler</h3>
+                <div className="mt-6 grid grid-cols-2 gap-3 sm:gap-4">
+                  {s.gallery.map((g) => (
+                    <div key={g.src} className="overflow-hidden rounded-2xl ring-1 ring-white/10">
+                      <Image
+                        src={g.src}
+                        alt={g.alt}
+                        width={g.w}
+                        height={g.h}
+                        sizes="(min-width: 1024px) 380px, 45vw"
+                        className="aspect-[3/4] w-full object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </Reveal>
+            )}
           </article>
 
           <aside className="space-y-5 lg:sticky lg:top-28 lg:self-start">

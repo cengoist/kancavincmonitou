@@ -110,6 +110,24 @@ export const photos = {
     w: 1200,
     h: 1600,
   },
+  jcbDig: {
+    src: "/media/jcb-kepce-santiye-kazi-calismasi.jpg",
+    alt: "Kanca Vinç JCB 3CX kepçe (beko loder) şantiyede kazı ve hafriyat çalışmasına hazır",
+    w: 1200,
+    h: 1600,
+  },
+  jcbSide: {
+    src: "/media/jcb-3cx-beko-loder-yan-gorunum.jpg",
+    alt: "JCB 3CX beko loder yan görünüm, ayakları indirilmiş operatörlü kepçe",
+    w: 1200,
+    h: 1600,
+  },
+  jcbBucket: {
+    src: "/media/jcb-kepce-hafriyat-kova.jpg",
+    alt: "Hafriyat sahasında çalışan operatörlü JCB kepçe, ön kova dolu",
+    w: 1200,
+    h: 1600,
+  },
   night: {
     src: "/media/gece-manitou-kova-ile-calisma.jpg",
     alt: "Gece şantiyede kova ataşmanıyla çalışan kırmızı Manitou teleskopik yükleyici",

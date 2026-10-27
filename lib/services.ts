@@ -18,6 +18,8 @@ export type Service = {
   icon: "forklift" | "crane" | "hardhat" | "package" | "shovel";
   /** Fotoğraf hazır olunca ekleyin; yoksa kartta ikonlu tasarım gösterilir. */
   photo?: Photo;
+  /** Hizmet sayfasında "Sahadan kareler" olarak gösterilecek ek fotoğraflar. */
+  gallery?: Photo[];
   /** Uzun SEO metni (paragraflar) */
   body: string[];
   uses: string[];
@@ -159,6 +161,8 @@ export const services: Service[] = [
     h1: `${c} JCB Kepçe Kiralama`,
     lead: "Kazı, hafriyat ve yükleme işleri için operatörlü JCB kepçe (beko loder) ile hızlı ve düzenli çalışıyoruz.",
     icon: "shovel",
+    photo: photos.jcbDig,
+    gallery: [photos.jcbSide, photos.jcbBucket],
     body: [
       `JCB kepçe, halk arasında "beko loder" ya da "kazıcı yükleyici" olarak da bilinir. Önünde yükleyici kovası, arkasında kazıcı kolu olduğu için tek makineyle hem kazı hem yükleme yapar. Bu çok yönlülük, küçük ve orta ölçekli işlerde ayrı ayrı iş makinesi kiralama maliyetini ortadan kaldırır. ${c} genelinde operatörlü JCB kepçe kiralama hizmeti veriyoruz.`,
       "Temel ve bodrum kazısı, kanal ve altyapı hatları, çukur açma, tesviye, moloz ve hafriyat yükleme gibi işlerde kullanılır. Lastikli olduğu için asfaltta kendi gücüyle hareket edebilir, dar sokaklarda ve sınırlı alanlarda rahatça çalışır.",
